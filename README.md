@@ -54,6 +54,5 @@ License
 MIT License
 
 Contact
-
-Developed by Samjhana Gharti Magar
+Developed by Samjhana Gharti Magar<br>
 GitHub: https://github.com/notKuina
