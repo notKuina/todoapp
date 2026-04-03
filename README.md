@@ -3,7 +3,7 @@ My To-Do App (Flask)
 This is a simple To-Do application built with Python and Flask. You can run it locally or deploy it online. The app allows you to add, edit, delete, and mark tasks as done, and organize tasks by date.
 
 Download the ready-to-use To-Do App here:<br>
-](https://github.com/notKuina/todoapp/releases/tag/v1.0)<br>
+(https://github.com/notKuina/todoapp/releases/tag/v1.0)<br>
 Unzip the folder to a location of your choice.<br>
 
 Requirements<br>
@@ -53,5 +53,6 @@ License
 MIT License
 
 Contact
+
 Developed by Samjhana Gharti Magar<br>
 GitHub: https://github.com/notKuina
