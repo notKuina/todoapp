@@ -2,54 +2,52 @@ My To-Do App (Flask)
 
 This is a simple To-Do application built with Python and Flask. You can run it locally or deploy it online. The app allows you to add, edit, delete, and mark tasks as done, and organize tasks by date.
 
-Download the App
+Download the ready-to-use To-Do App here:<br>
+https://github.com/notKuina/todoapp/releases/download/v1.0/todoapp.zip<br>
 
-You can download the ready-to-use zipped version of this app here:
-<ZIP_LINK_HERE>
+Unzip the folder to a location of your choice.<br>
 
-Unzip the folder to a location of your choice.
+Requirements<br>
+Python 3.8 or higher<br>
+Flask library<br>
 
-Requirements
-Python 3.8 or higher
-Flask library
+Install Flask using pip if not already installed:<br>
+pip install flask<br>
 
-Install Flask using pip if not already installed:
-pip install flask
-
-Running Locally
-Open a terminal/command prompt.
-Navigate to the app folder:
-cd path_to_unzipped_folder
+Running Locally<br>
+Open a terminal/command prompt.<br>
+Navigate to the app folder:<br>
+cd path_to_unzipped_folder<br>
 Run the app using:
-python run.py
-Your default browser should automatically open at http://127.0.0.1:5000/.
-If the browser does not open automatically, manually go to http://127.0.0.1:5000/.
-File Structure
-app/ – contains your main Flask app code (app.py) and templates folder.
-templates/ – contains index.html and any other HTML templates.
-static/ – optional, for CSS, JS, images.
-run.py – starts the Flask app and opens a browser.
-tasks.json – stores your task data (created automatically).
-zip_app.py – optional script to create a zip of the app folder.
-Using the App
-Add a new task by typing in the input box and selecting a date.
-Edit a task by clicking the Edit button next to it.
-Delete a task by clicking the Delete button.
-Mark tasks as done by clicking the Done button.
-Tasks are grouped and displayed by date.
+python run.py<br>
+Your default browser should automatically open at http://127.0.0.1:5000/.<br>
+If the browser does not open automatically, manually go to http://127.0.0.1:5000/.<br>
+File Structure<br>
+app/ – contains your main Flask app code (app.py) and templates folder.<br>
+templates/ – contains index.html and any other HTML templates.<br>
+static/ – optional, for CSS, JS, images.<br>
+run.py – starts the Flask app and opens a browser.<br>
+tasks.json – stores your task data (created automatically).<br>
+zip_app.py – optional script to create a zip of the app folder.<br><br>
+Using the App<br>
+Add a new task by typing in the input box and selecting a date.<br>
+Edit a task by clicking the Edit button next to it.<br>
+Delete a task by clicking the Delete button.<br>
+Mark tasks as done by clicking the Done button.<br>
+Tasks are grouped and displayed by date.<br>
 
-How to Use the App
+How to Use the App<br>
 
-Open the app in the browser.
-Enter a task name in the input box and select a date.
-Click “Add” to create the task.
-Tasks are listed below grouped by date.
-Use the “Done” button to toggle completion, “Edit” to modify the task, and “Delete” to remove it.
+Open the app in the browser.<br>
+Enter a task name in the input box and select a date.<br>
+Click “Add” to create the task.<br>
+Tasks are listed below grouped by date.<br>
+Use the “Done” button to toggle completion, “Edit” to modify the task, and “Delete” to remove it.<br>
 
-Tips
+Tips<br>
 
-Always save tasks after editing, deleting, or adding.
-You can commit the app to GitHub to share it with others.
+Always save tasks after editing, deleting, or adding.<br>
+You can commit the app to GitHub to share it with others.<br>
 
 License
 
@@ -57,5 +55,5 @@ MIT License
 
 Contact
 
-Developed by <Your Samjhana Gharti Magar>
+Developed by Samjhana Gharti Magar
 GitHub: https://github.com/notKuina
