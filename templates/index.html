@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My To-Do App</title>
+    <style>
+        body {
+            background-color: rgb(243, 242, 242);
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            padding: 20px;
+        }
+        form input[type="text"], form input[type="date"] {
+            padding: 10px;
+            width: 250px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+        form input[type="text"]:focus, form input[type="date"]:focus {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+        form button {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: none;
+            margin-left: 5px;
+            cursor: pointer;
+            background-color: #1c3967;
+            color: white;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #1c3967;
+        }
+        .task {
+            background-color: white;
+            padding: 15px;
+            margin: 10px auto;
+            width: 350px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow:0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .done {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .task form {
+            display: inline;
+            margin-left: 5px;
+        }
+        .task input[type="text"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 150px;
+        }
+        .task button {
+            padding: 5px 8px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .done-btn { background-color: green; color: white; }
+        .delete-btn { background-color:red; color: white; }
+        .edit-btn { background-color: orange; color: white; }
+    </style>
+</head>
+<body>
+    <h1>To-Do App</h1>
+
+    <!-- Add new task -->
+    <form method="post">
+        <input type="text" name="task" placeholder="Enter a task" required>
+        <input type="date" name="task_date" value="{{ today }}" required>
+        <button type="submit" name="add">Add</button>
+    </form>
+
+    <!-- Group tasks by date -->
+    {% for date in sorted_dates %}
+        <h3>{{ date }}</h3>
+        {% for task in tasks_by_date[date] %}
+            <div class="task">
+                {% if request.args.get('edit') == loop.index0|string %}
+                    <form method="post" style="display:inline;">
+                        <input type="hidden" name="edit_index" value="{{ loop.index0 }}">
+                        <input type="text" name="edit_title" value="{{ task.title }}">
+                        <button type="submit" name="edit" class="edit-btn">Save</button>
+                    </form>
+                {% else %}
+                    <span class="{{ 'done' if task.done }}">{{ task.title }}</span>
+                    <div>
+                        <!-- Toggle Done -->
+                        <form method="post" style="display:inline;">
+                            <button type="submit" name="done" value="{{ loop.index0 }}" class="done-btn">Done</button>
+                        </form>
+
+                        <!-- Edit -->
+                        <form method="get" style="display:inline;">
+                            <button type="submit" name="edit" value="{{ loop.index0 }}" class="edit-btn">Edit</button>
+                        </form>
+
+                        <!-- Delete -->
+                        <form method="post" style="display:inline;">
+                            <button type="submit" name="delete" value="{{ loop.index0 }}" class="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
